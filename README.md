@@ -63,4 +63,21 @@ python manage.py runserver
 This project uses **MySQL** as the backend database.
 
 ## Author
-**Prerna Veer**
+**Prerna Veer**   
+ 
+## Project Screenshots
+
+### 1. Project Structure
+![Project Structure](screenshots/project_structure.png)
+
+### 2. Dashboard
+![Dashboard](screenshots/Dashboard.png)
+
+### 3. Employee List
+![Employee List](screenshots/Employee_list.png)
+
+### 4. Leave Approval
+![Leave Approval](screenshots/Leave_Approval.png)
+
+### 5. MySQL Database
+![MySQL Database](screenshots/MySQL.png)
