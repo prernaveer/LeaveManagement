@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>Leave list</title>
+    <link rel="stylesheet" href="{% static 'employee/style.css' %}">
+</head>
+<body>
+
+<h1>Leave Applications</h1>
+
+<!-- Filter by Status -->
+<b>Status:</b>
+
+<a href="{% url 'leave_list' %}">All</a> |
+
+<a href="?status=Pending">Pending</a> |
+
+<a href="?status=Approved">Approved</a> |
+
+<a href="?status=Rejected">Rejected</a>
+
+<br><br>
+
+<!-- Filter by Leave Type -->
+<b>Leave Type:</b>
+
+<a href="{% url 'leave_list' %}">All</a> |
+
+<a href="?leave_type=Casual">Casual</a> |
+
+<a href="?leave_type=Sick">Sick</a> |
+
+<a href="?leave_type=Earned">Earned</a>
+
+<br><br>
+
+<!-- <a href="{% url 'leave_add' %}">Apply Leave</a> -->
+<a href="{% url 'dashboard' %}">Dashboard</a> |
+<a href="{% url 'leave_add' %}">Apply Leave</a> |
+<a href="{% url 'employee_list' %}">Employee Management</a>
+
+<br><br>
+
+<table border="1" cellpadding="10">
+<tr>
+    <th>Employee</th>
+    <th>Leave Type</th>
+    <th>From Date</th>
+    <th>To Date</th>
+    <th>Reason</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+{% for leave in leaves %}
+<tr>
+    <td>{{ leave.employee }}</td>
+    <td>{{ leave.leave_type }}</td>
+    <td>{{ leave.from_date }}</td>
+    <td>{{ leave.to_date }}</td>
+    <td>{{ leave.reason }}</td>
+    <td>{{ leave.status }}</td>
+    <td>
+        <a href="{% url 'leave_update' leave.id %}">Edit</a> |
+        <a href="{% url 'leave_delete' leave.id %}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

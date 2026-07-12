@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'employee/style.css' %}">
+</head>
+<body>
+
+<h1>Employee Leave Management Dashboard</h1>
+
+<hr>
+
+<h3>Total Employees : {{ total_employees }}</h3>
+
+<h3>Total Leave Applications : {{ total_leaves }}</h3>
+
+<h3>Approved Leaves : {{ approved_leaves }}</h3>
+
+<h3>Pending Leaves : {{ pending_leaves }}</h3>
+
+<h3>Rejected Leaves : {{ rejected_leaves }}</h3>
+
+<hr>
+
+<a href="{% url 'employee_list' %}">Employee Management</a> |
+<a href="{% url 'leave_list' %}">Leave Management</a>
+
+</body>
+</html>
